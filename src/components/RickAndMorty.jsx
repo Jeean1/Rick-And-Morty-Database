@@ -80,10 +80,7 @@ const RickAndMorty = () => {
 
     return (
         <>
-            {/* <div className='div_nextWorld'>
 
-                <button onClick={nextWorld} className='nextWorld'>Next dimension</button>
-            </div> */}
             <header>
                 <div className='header_container'>
 
