@@ -136,10 +136,10 @@ const RickAndMorty = () => {
                             <p>{location.residents?.length}</p>
                         </div>
 
-                        <div className='div_nextWorld'>
+                        {/* <div className='div_nextWorld'>
 
                             <button onClick={nextWorld} className='nextWorld'>Next dimension</button>
-                        </div>
+                        </div> */}
 
                     </div>
                 </div>
@@ -148,6 +148,11 @@ const RickAndMorty = () => {
             <section>
 
                 <div className='card_container'>
+
+                    <div className='div_nextWorld'>
+
+                        <button onClick={nextWorld} className='nextWorld'>Next dimension</button>
+                    </div>
 
                     <div className='cards_section'>
 
