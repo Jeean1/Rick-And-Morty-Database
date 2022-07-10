@@ -14,6 +14,8 @@ const RickAndMorty = () => {
 
     const [id, setId] = useState("")
 
+    const [counterID, setCounterID] = useState(0)
+
     useEffect(() => {
 
         let random = Math.floor(Math.random() * 126) + 1
@@ -35,10 +37,53 @@ const RickAndMorty = () => {
 
     }
 
+    const noResident = () => {
+
+        if (location.residents?.length === 0) {
+            return (
+                <>
+                    <div className='noResidents'>
+
+                        <h3>No residents in this dimension...</h3>
+
+                    </div>
+                </>
+            )
+        }
+
+    }
+
+    const nextWorld = () => {
+
+        axios.get(`https://rickandmortyapi.com/api/location/${counterID}`)
+            .then(res => setLocation(res.data))
+
+        let increment = () => {
+            if (counterID >= 126) {
+                setCounterID(0)
+            }
+            else {
+
+                setCounterID(counterID + 1)
+                console.log(counterID)
+
+            }
+        }
+
+
+
+
+        return increment()
+
+    }
+
 
     return (
         <>
+            {/* <div className='div_nextWorld'>
 
+                <button onClick={nextWorld} className='nextWorld'>Next dimension</button>
+            </div> */}
             <header>
                 <div className='header_container'>
 
@@ -55,7 +100,7 @@ const RickAndMorty = () => {
 
                         <div className='header_input'>
 
-                            <input type="text" placeholder='Type a location ID' value={id} onChange={e => setId(e.target.value)} />
+                            <input type="text" placeholder='Type a number location ID (1-126)' value={id} onChange={e => setId(e.target.value)} />
 
                         </div>
 
@@ -93,6 +138,12 @@ const RickAndMorty = () => {
                             <h3>Population:</h3>
                             <p>{location.residents?.length}</p>
                         </div>
+
+                        <div className='div_nextWorld'>
+
+                            <button onClick={nextWorld} className='nextWorld'>Next dimension</button>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -103,7 +154,7 @@ const RickAndMorty = () => {
 
                     <div className='cards_section'>
 
-
+                        {noResident()}
 
                         {
                             location.residents?.map(resident => (

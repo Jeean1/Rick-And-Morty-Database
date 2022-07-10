@@ -45,8 +45,11 @@ const ResidentItem = ({ resident }) => {
 
 
 
+
+
     return (
         <>
+
             <div className='card'>
 
                 <div className='card_div_img'>
