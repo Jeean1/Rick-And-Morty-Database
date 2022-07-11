@@ -136,10 +136,6 @@ const RickAndMorty = () => {
                             <p>{location.residents?.length}</p>
                         </div>
 
-                        {/* <div className='div_nextWorld'>
-
-                            <button onClick={nextWorld} className='nextWorld'>Next dimension</button>
-                        </div> */}
 
                     </div>
                 </div>

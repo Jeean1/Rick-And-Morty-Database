@@ -172,6 +172,15 @@ body {
 
 }
 
+.div_nextWorld button:hover{
+    background-color: rgb(88, 168, 141);
+    cursor: pointer;
+}
+.header_button button:hover{
+    background-color: rgb(88, 168, 141);
+    cursor: pointer;
+}
+
 
 
 /* ----------------------------------------------------------------------------------------------------------------------------------- */
